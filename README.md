@@ -1,2 +1,1 @@
-# openmepa
-un esperimento sui dati mepa / acquisti in rete
+working sample http://dev.dataninja.it/mepa/

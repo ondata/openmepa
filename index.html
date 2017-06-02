@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>mepa appalti</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="@nelsonmau">
+	<meta name="keywords" content="">
+
+	<meta property="og:image" content="" />
+	<meta property="og:title" content="" />
+	<meta property="og:url" content="" />
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  	<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <link rel="exhibit/data"
+    type="application/jsonp"
+    href="https://spreadsheets.google.com/feeds/list/1_jBUTAMwKvEYwf4ymHqFqTWrojH10sIHwJ0RkCctqIc/ocx61te/public/basic?hl=en_US&alt=json-in-script"
+    ex:converter="googleSpreadsheets" />
+		<!-- source: https://docs.google.com/spreadsheets/d/1_jBUTAMwKvEYwf4ymHqFqTWrojH10sIHwJ0RkCctqIc/edit#gid=781303400 -->
+
+
+
+    <script src="./js/dist/exhibit-api.js?locale=en"></script>
+
+
+    <script type="text/javascript">
+    var tableStyler = function(table, database) {
+    	$(table).addClass("table table-condensed table-striped");
+    };
+    </script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+
+			</div>
+
+			<div class="col-md-8 column">
+				<h3 class="text-center">mepa appalti
+				</h3>
+			</div>
+			<div class="col-md-2 column">
+				<!--
+				<ul class="share-buttons">
+					<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fopendatacompanies.eu&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="img/Facebook.png"></a></li>
+					<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fpetrusino.opendatasicilia.it&text=:%20http%3A%2F%2Fpetrusino.opendatasicilia.it&via=opendatasicilia" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img src="img/Twitter.png"></a></li>
+					<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fopendatacompanies.eu" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="img/Google+.png"></a></li>
+				</ul>
+			-->
+			</div>
+
+		</div>
+
+		<div class="row clearfix">
+			<div class="col-md-3 col-sm-12 column">
+				<div ex:role="facet"
+				ex:expression=".categoria"
+				ex:facetLabel="categoria"
+				ex:sortMode="value"
+				ex:orders=".scadenza">
+			  </div>
+			  <div ex:role="facet"
+			  ex:expression=".committente"
+        ex:facetLabel="committente"
+			  ex:sortMode="value">
+			  </div>
+			</div>
+			<div class="col-md-9 col-sm-12 col-xs-12 column">
+				<strong>Cerca</strong>
+				<div ex:role="facet" ex:facetClass="TextSearch">
+				</div>
+				<div ex:role="viewPanel" style="padding: 0in;">
+					<div ex:role="exhibit-view"
+					ex:viewClass="Exhibit.TabularView"
+					ex:label="Table"
+					ex:columns=".scadenza"
+					ex:columnLabels="Elenco dei dataset"
+					ex:columnFormats="list"
+					ex:sortColumn="0"
+					ex:sortDescending="true"
+					ex:tableStyler="tableStyler">
+					<div ex:role="exhibit-lens">
+						<div class="table-responsive">
+							<table class="table" ex:class-content=".territorio">
+								<tr>
+								<td>
+									<a ex:href-content=".link" ex:onclick-subcontent="trackOutboundLink('{{.link}}'); return false;" target="_blank">
+										<strong><h3 ex:content=".descrizione"></h3	></strong>
+									</a>
+								  <br><strong>Committente:</strong> <span ex:content=".committente" class="petrusino"></span>
+									<br><strong>Importo:</strong> <span ex:content=".importo" class="petrusino"></span>
+									<br><strong>Categoria:</strong> <span ex:content=".categoria" class="petrusino"></span>
+									<br><strong>Pubblicato il:</strong> <span ex:content=".pubblicazione" class="petrusino"></span> | <strong>Scade il:</strong> <span ex:content=".scadenza" class="petrusino"></span>
+								</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<footer>
+		 <p class="text-center">footer
+		</p>
+		</footer>
+		</body>
+		</html>

@@ -1,1 +1,1 @@
-working sample http://dev.dataninja.it/mepa/
+working sample https://ondata.github.io/openmepa/
